@@ -1,6 +1,43 @@
-= cpf_faker
+= CPF Faker
 
-Description goes here.
+Generates Brazilian CPF numbers for use in testing. Great to be used alongside {Faker}[https://github.com/stympy/faker] and won't clutter your namespace. 
+
+Good and simple code with working specs.
+
+== Install
+
+Use rubygems:
+
+  gem install cpf_faker
+  
+Or add it to your Gemfile if your project uses bundler (ex.: Rails apps)
+
+  group :development do
+    # ...
+    gem 'cpf_faker'
+  end
+
+== Usage
+
+  require 'cpf_faker'
+
+  Faker::CPF.numeric    #=> "32586104447"
+
+  Faker::CPF.pretty     #=> "419.356.777-05"
+
+== Motivation
+
+I got tired of using lame "Ad bait" sites to generate CPFs. And needed to generate several to populate a test database.
+
+So I invested 30 minutes to make this into a simple gem others could use.
+
+== Credits
+
+Syntax based on the {Faker}[https://github.com/stympy/faker] gem. 
+
+Generation of the verification digits shamelessly stolen from the {validates_as_cpf}[https://github.com/sobrinho/validates_as_cpf] Rails Plugin (credit to Gabriel Sobrinho).
+
+{br-cpf}[https://github.com/bbcoimbra/br-cpf] gem used for cross validation in the specs (credit to Bruno Coimbra). 
 
 == Contributing to cpf_faker
  
