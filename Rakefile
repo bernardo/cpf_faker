@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "cpf_faker"
   gem.homepage = "http://github.com/bernardo/cpf_faker"
   gem.license = "MIT"
-  gem.summary = %Q{Generate fake brasilian CPFs for test purposes}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Generate fake brasilian CPF and CNPJ numbers for test purposes}
+  gem.description = %Q{Generates brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside Faker and won't clutter your namespace. }
   gem.email = "berpasan@gmail.com"
   gem.authors = ["Bernardo de Pádua"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

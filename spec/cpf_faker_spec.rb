@@ -6,7 +6,7 @@ describe Faker::CPF do
   
   it "generates valid number only cpfs" do
     generated = Faker::CPF.numeric
-    generated.should =~ (/^\d{11}$/)
+    generated.should =~ /^\d{11}$/
     BR::CPF.valid?(generated).should == true
   end
   
@@ -20,7 +20,8 @@ describe Faker::CPF do
   it "has a bunch of aliases in case you forget the method names" do
     lambda{Faker::CPF.number}.should_not raise_error
     lambda{Faker::CPF.numbers}.should_not raise_error
-    lambda{Faker::CPF.cpf}.should_not raise_error   
+    lambda{Faker::CPF.cpf}.should_not raise_error
+    lambda{Faker::CPF.formatted}.should_not raise_error      
   end
   
 end
