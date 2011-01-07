@@ -5,13 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cpf_faker}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bernardo de P\303\241dua"]
-  s.date = %q{2010-12-23}
-  s.description = %q{Generates Brazilian CPF numbers for use in testing. Great to be used alongside Faker and won't clutter your namespace. }
+  s.date = %q{2011-01-07}
+  s.description = %q{Generates brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside Faker and won't clutter your namespace. }
   s.email = %q{berpasan@gmail.com}
+  s.executables = ["cnpj", "cpf"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -25,7 +26,13 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bin/cnpj",
+    "bin/cpf",
+    "cpf_faker.gemspec",
     "lib/cpf_faker.rb",
+    "lib/faker/cnpj.rb",
+    "lib/faker/cpf.rb",
+    "spec/cnpj_faker_spec.rb",
     "spec/cpf_faker_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -33,8 +40,9 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Generate fake brasilian CPFs for test purposes}
+  s.summary = %q{Generate fake brasilian CPF and CNPJ numbers for test purposes}
   s.test_files = [
+    "spec/cnpj_faker_spec.rb",
     "spec/cpf_faker_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -49,12 +57,14 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.1"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<br-cpf>, [">= 0"])
+      s.add_development_dependency(%q<br-cnpj>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<br-cpf>, [">= 0"])
+      s.add_dependency(%q<br-cnpj>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, ["~> 2.1.0"])
@@ -62,6 +72,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<br-cpf>, [">= 0"])
+    s.add_dependency(%q<br-cnpj>, [">= 0"])
   end
 end
 
