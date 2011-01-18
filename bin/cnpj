@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
+require 'rubygems'
 require 'cpf_faker'
+require 'clipboard'
 
-puts Faker::CNPJ.numeric
+puts generated = Faker::CNPJ.numeric
+Clipboard.copy generated
+puts "CNPJ Copied to your clipboard!"
