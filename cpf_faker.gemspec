@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cpf_faker}
-  s.version = "1.1.0"
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bernardo de P\303\241dua"]
-  s.date = %q{2011-01-07}
+  s.date = %q{2011-01-18}
   s.description = %q{Generates brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside Faker and won't clutter your namespace. }
   s.email = %q{berpasan@gmail.com}
   s.executables = ["cnpj", "cpf"]
@@ -52,6 +52,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<clipboard>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.1"])
@@ -59,6 +60,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<br-cpf>, [">= 0"])
       s.add_development_dependency(%q<br-cnpj>, [">= 0"])
     else
+      s.add_dependency(%q<clipboard>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
@@ -67,6 +69,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<br-cnpj>, [">= 0"])
     end
   else
+    s.add_dependency(%q<clipboard>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.1.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
