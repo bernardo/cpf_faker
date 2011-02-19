@@ -26,7 +26,7 @@ module Faker
         end
 
         second_validator = sum % 11
-        (cnpj_root << second_validator = second_validator < 2 ? 0 : 11 - second_validator).to_s
+        (cnpj_root << second_validator = second_validator < 2 ? 0 : 11 - second_validator).join
       end
       alias numbers numeric
       alias number numeric
