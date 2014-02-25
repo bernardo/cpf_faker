@@ -35,7 +35,7 @@ module Faker
       # Generates a valid CPF number with numbers and separators. Returns a String.
       #
       # Example:
-      #   Faker::CPF.number # => "059.893.186-42"
+      #   Faker::CPF.pretty # => "059.893.186-42"
       def pretty
           cpf_numbers = numeric
           "%s.%s.%s-%s" % [cpf_numbers[0..2], cpf_numbers[3..5], cpf_numbers[6..8], cpf_numbers[9..10]]
