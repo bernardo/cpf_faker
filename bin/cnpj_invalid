@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'cpf_faker'
+require 'clipboard'
+
+puts generated = Faker::CNPJInvalid.numeric
+Clipboard.copy generated
+puts "Invalid CNPJ Copied to your clipboard!"

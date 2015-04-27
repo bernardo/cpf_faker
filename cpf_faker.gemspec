@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.date = %q{2011-06-26}
   s.description = %q{Generates brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside Faker and won't clutter your namespace. }
   s.email = %q{berpasan@gmail.com}
-  s.executables = ["cnpj", "cpf"]
+  s.executables = ["cnpj", "cnpj_invalid", "cpf", "cpf_invalid"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -27,13 +27,19 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/cnpj",
+    "bin/cnpj_invalid",
     "bin/cpf",
+    "bin/cpf_invalid",
     "cpf_faker.gemspec",
     "lib/cpf_faker.rb",
     "lib/faker/cnpj.rb",
+    "lib/faker/cnpj_invalid.rb",
     "lib/faker/cpf.rb",
+    "lib/faker/cpf_invalid.rb",
     "spec/cnpj_faker_spec.rb",
+    "spec/cnpj_invalid_faker_spec.rb",
     "spec/cpf_faker_spec.rb",
+    "spec/cpf_invalid_faker_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/bernardo/cpf_faker}
@@ -43,7 +49,9 @@ Gem::Specification.new do |s|
   s.summary = %q{Generate fake brasilian CPF and CNPJ numbers for test purposes}
   s.test_files = [
     "spec/cnpj_faker_spec.rb",
+    "spec/cnpj_invalid_faker_spec.rb",
     "spec/cpf_faker_spec.rb",
+    "spec/cpf_invalid_faker_spec.rb",
     "spec/spec_helper.rb"
   ]
 
