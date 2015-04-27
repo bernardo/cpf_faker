@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'cpf_faker'
+require 'clipboard'
+
+puts generated = Faker::CPFInvalid.numeric
+Clipboard.copy generated
+puts "Invalid CPF Copied to your clipboard!"
