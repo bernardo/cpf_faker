@@ -6,11 +6,12 @@ module Faker
       # Example:
       #  Faker::CNPJInvalid.numeric  #=> "57222068000132"
       def numeric
-        cnpj_root = Array.new(12) { rand(10) }
+        cnpj_root = Array.new(14) { rand(10) }
+        cnpj_root.join
       end
       alias numbers numeric
       alias number numeric
-      
+
       # Generates an invalid CNPJ number, including separators. Returns a string.
       #
       # Example:
@@ -21,7 +22,7 @@ module Faker
       end
       alias cnpj pretty
       alias formatted pretty
-      
+
     end
   end
 

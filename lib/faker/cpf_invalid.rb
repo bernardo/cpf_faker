@@ -1,6 +1,6 @@
 module Faker
   class CPFInvalid
-    
+
     class << self
       # Generates an invalid CPF number with numbers only. Returns a String (since it might contain leading zeros).
       #
@@ -8,6 +8,7 @@ module Faker
       #   Faker::CPFInvalid.number # => "11438374798"
       def numeric
         cpf_root = Array.new(11) { rand(10) }
+        cpf_root.join
       end
       alias number numeric
       alias numbers numeric
@@ -22,7 +23,7 @@ module Faker
       end
       alias cpf pretty
       alias formatted pretty
-      
+
     end
 
   end

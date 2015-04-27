@@ -1,4 +1,4 @@
 require 'faker/cpf'
-require 'faker/cpfinvalid'
+require 'faker/cpf_invalid'
 require 'faker/cnpj'
-require 'faker/cnpjinvalid'
+require 'faker/cnpj_invalid'

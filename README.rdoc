@@ -2,18 +2,18 @@
 
 Pare de usar estes sites "garimpadores de grana do adwords" quando precisar de um CPF ou CPNJ!
 
-Generates Brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside {Faker}[https://github.com/stympy/faker] and won't clutter your namespace. 
+Generates Brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside {Faker}[https://github.com/stympy/faker] and won't clutter your namespace.
 
 As a bonus, you get command line executables for quick generation or use in Bash scripts.
 
-Good and simple code with working specs. It is pure ruby since the algorithms are lame and simple and nobody in their right mind should ever care about performance for this. 
+Good and simple code with working specs. It is pure ruby since the algorithms are lame and simple and nobody in their right mind should ever care about performance for this.
 
 == Install
 
 Use rubygems:
 
   gem install cpf_faker
-  
+
 Or add it to your Gemfile if your project uses bundler (ex.: Rails apps)
 
   group :development do
@@ -31,13 +31,21 @@ Or add it to your Gemfile if your project uses bundler (ex.: Rails apps)
   Faker::CPF.numeric    #=> "32586104447"
   Faker::CPF.pretty     #=> "419.356.777-05"
 
+  # Generates Invalid CPFs
+  Faker::CPFInvalid.numeric    #=> "12345678901"
+  Faker::CPFInvalid.pretty     #=> "123.456.789-01"
+
   # Generates CNPJ
   Faker::CNPJ.numeric    #=> "31669138588095"
   Faker::CNPJ.pretty     #=> "69.068.788/8492-00"
 
+  # Generates Invalid CNPJ
+  Faker::CNPJInvalid.numeric    #=> "12345678901234"
+  Faker::CNPJInvalid.pretty     #=> "12.345.678/9012-34"
+
   #some aliases so you won't guess wrong
   Faker::CPF.cpf     #=> "859.684.732-40"
-  
+
 === Command line
 
 The command line executables are ridiculously simple and do nothing besides printing and coping number-only cpfs and cnpjs.
@@ -45,10 +53,18 @@ The command line executables are ridiculously simple and do nothing besides prin
   $ cpf
   85968473240
   CPF Copied to your clipboard!
-  
+
+  $ cpf_invalid
+  12345678901
+  Invalid CPF Copied to your clipboard!
+
   $ cnpj
   69068788849200
   CNPJ Copied to your clipboard!
+
+  $ cnpj_invalid
+  12345678901234
+  Invalid CNPJ Copied to your clipboard!
 
 == Motivation
 
@@ -58,14 +74,14 @@ So I invested 30 minutes to make this into a simple gem others could use.
 
 == Credits
 
-Syntax based on the {Faker}[https://github.com/stympy/faker] gem. 
+Syntax based on the {Faker}[https://github.com/stympy/faker] gem.
 
 Generation of the verification digits shamelessly stolen from the {validates_as_cpf}[https://github.com/sobrinho/validates_as_cpf] Rails Plugin (credit to Gabriel Sobrinho).
 
-{br-cpf}[https://github.com/bbcoimbra/br-cpf] gem used for cross validation in the specs (credit to Bruno Coimbra). 
+{br-cpf}[https://github.com/bbcoimbra/br-cpf] gem used for cross validation in the specs (credit to Bruno Coimbra).
 
 == Contributing to cpf_faker
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -78,4 +94,3 @@ Generation of the verification digits shamelessly stolen from the {validates_as_
 
 Copyright (c) 2010 Bernardo de Pádua. See LICENSE.txt for
 further details.
-
